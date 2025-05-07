@@ -21,12 +21,12 @@ export default function DetailsScreen({navigation}){
             </View>
         </View>
     );
-}
+};
 
 const styles=StyleSheet.create({
     container: {
         flex:1,
-        justifyContent:'center',
+        justifyContent:'center',    
         alignItems: 'center',
         backgroundColor: '#faf0e6',
     },
@@ -40,4 +40,4 @@ const styles=StyleSheet.create({
         width: windowWidth *0.5,
         borderRadius: 5,
     },
-})
+});
