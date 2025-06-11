@@ -13,8 +13,8 @@ export default function LoginScreen ({navigation}){
         useEffect(() => {
             const statusLogin = async () => {
                 try {
-                    const usuarioLogado = await AsyncStorage.getItem('usuarioLogado');
-                    if (usuarioLogado) {
+                    const novoUsuario = await AsyncStorage.getItem('novoUsuario');
+                    if (novoUsuario) {
                         navigation.navigate('Home');
                     }
                 } catch (error) {
@@ -31,16 +31,16 @@ export default function LoginScreen ({navigation}){
             }
         
             if (usuario !== 'admin@gmail.com') {
-                alert('Erro. Usuário inválido.');
+                alert('Erro. Usuário ou senha incorretos.');
                 return;
             }
         
             if (senha !== '1234') {
-                alert('Erro. Senha incorreta.');
+                alert('Erro. Usuário ou senha incorretos.');
                 return;
             }
             try {
-                await AsyncStorage.setItem('usuarioLogado', 'logado');
+                await AsyncStorage.setItem('novoUsuario', 'EstaLogado');
                 navigation.navigate('Home');
             } catch (error) {
                 console.error('Ocorreu um erro', error);
